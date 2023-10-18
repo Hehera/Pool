@@ -1,0 +1,45 @@
+--------------
+Slick slider 
+--------------
+1.npm install slick-carousel
+
+2.У файлі main.js:
+import $ from "jquery";
+
+import "slick-carousel";
+
+$(".carousel").slick({
+  infinite: false,//безкінечна прокрутка 
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  infinite: true,
+  arrows:false,
+});
+
+3.Якщо в нас свої btn-перемикачі тоді в конфігурації arrows:false.
+4.$("#popularPrev").on("click", function () {
+  $(".carousel").slick("slickPrev"); // Перемикання на попередній слайд
+});
+
+$("#popularNext").on("click", function () {
+  $(".carousel").slick("slickNext"); // Перемикання на наступний слайд
+});
+5.В розмітці добавити id до button popularPrev і popularNext
+-------------
+Swipper JS
+-------------
+1.npm install swiper
+2.import Swiper from "swiper/bundle";
+  import "swiper/css/bundle";
+
+const swiper = new Swiper(".swiper", {
+  slidesPerView: 4,
+  spaceBetween: 32,//відступ між карточками
+  navigation: {
+    nextEl: "#popularNext",
+    prevEl: "#popularPrev",
+  },
+  loop: true,//безкінечна прокрутка 
+});
+3.В розмітці добавити id до button popularPrev і popularNext

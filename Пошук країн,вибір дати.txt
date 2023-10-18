@@ -1,0 +1,63 @@
+autoComplete basic how to set up instructions(пошук країн) 
+1)https://tarekraafat.github.io/autoComplete.js/#/usage?id=_2-script заходим сюда встановлюємо npm пакет для пошуку країн npm i @tarekraafat/autocomplete.js
+2)добавляємо селектор <input id="autoCompleteCountry"> (назва може бути наша,бо їх може бути декілька на сайті)
+3)у файлі js імпортуємо: import autoComplete from "@tarekraafat/autocomplete.js";
+4)Вставляємо нище змінної у файлі js const autoCompleteJS = new autoComplete({ config });
+5)Замість { config } вставляємо basic об'єкт звідси https://tarekraafat.github.io/autoComplete.js/#/usage?id=_2-script
+{
+    placeHolder: "Search for Food...",
+    data: {
+        src: ["Sauce - Thousand Island", "Wild Boar - Tenderloin", "Goat - Whole Cut"]
+    },
+    resultItem: {
+        highlight: true,
+    }
+}
+6)створюємо новий файл js і створюємо змінну countryList і поміщаємо в неї масив звідси https://gist.github.com/keeguon/2310008
+7)пишемо у новому файлі з масивом країн після нього export default countryList;
+8)import countryList from "./helpers/countryList"; наш масив імпортували в основний файл js і замість src вставили нашу змінну з країнами
+9)на сайті https://tarekraafat.github.io/autoComplete.js/#/usage?id=_2-script нажимаємо full demo і ще у властивості нашого об'єкта докидуємо
+{
+  // API Basic Configuration Object
+  selector: "#autoComplete",
+  placeHolder: "e.g Bali, Indonesia",
+  data: {
+    src: countryList,
+  },
+  resultItem: {
+    highlight: true,
+  },
+  events: {
+    input: {
+      selection: (event) => {
+        const selection = event.detail.selection.value;
+        autoCompleteJS.input.value = selection;
+      },
+    },
+  },
+  resultList: {
+    maxResults: 10,
+  },
+  searchEngine: "strict",
+}
+
+Вибір дати 
+
+https://easepick.com/packages/bundle.html заходим сюда 
+
+
+1)npm install @easepick/bundle
+2)import { easepick } from '@easepick/bundle'; в index JS
+3)Нище пишемо 
+const picker = new easepick.create({
+  element: document.getElementById('datepicker'),
+  css: [
+    'https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.1/dist/index.css',
+  ],
+});
+4)добавити до інпута id='datePicker'
+
+https://fancyapps.com/fancybox/getting-started/ cool slider 
+
+
+
