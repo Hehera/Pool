@@ -10,7 +10,14 @@ initSlickSlider();
 4.Пишемо у файлі slider.js
 import $ from "jquery";
 import "slick-carousel";
-$(".carousel").slick();
+$(".carousel").slick({
+  speed: 300,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  infinite: true,
+  arrows: true,
+  dots:true,
+});
 export default initSlickSlider;
 5.Пишемо розмітку 
 
