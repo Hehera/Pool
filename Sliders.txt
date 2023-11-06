@@ -1,24 +1,45 @@
 --------------
 Slick slider 
 --------------
-1.npm install slick-carousel
 
-2.У файлі main.js:
+1.npm i slick-carousel jquery 
+2.Створили файл новий slider.js
+3.підключили його в основний файл index.js:
+import initSlickSlider from "./modules/slider.js";
+initSlickSlider();
+4.Пишемо у файлі slider.js
 import $ from "jquery";
-
 import "slick-carousel";
+$(".carousel").slick();
+export default initSlickSlider;
+5.Пишемо розмітку 
 
-$(".carousel").slick({
-  infinite: false,//безкінечна прокрутка 
-  speed: 300,
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  infinite: true,
-  arrows:false,
-});
+<div class="carousel">
+    <div class="carousel__item">
+        <img src="./../../img/desc/desc-01.jpg" alt="">
+    </div>
+    <div class="carousel__item">
+        <img src="./../../img/desc/desc-01.jpg" alt="">
+    </div>
+    <div class="carousel__item">
+        <img src="./../../img/desc/desc-01.jpg" alt="">
+    </div>
+    <div class="carousel__item">
+        <img src="./../../img/desc/desc-01.jpg" alt="">
+    </div>
+    <div class="carousel__item">
+        <img src="./../../img/desc/desc-01.jpg" alt="">
+    </div>
+</div>
 
-3.Якщо в нас свої btn-перемикачі тоді в конфігурації arrows:false.
-4.$("#popularPrev").on("click", function () {
+6.Заходимо у файл стилів slick.scss та імпортуємо стилі
+@import '../../../node_modules/slick-carousel/slick/slick.scss'
+7.Щоб скоротити такий запис використовуємо ще один пакет і тільда
+
+
+
+6.Якщо в нас свої btn-перемикачі тоді в конфігурації arrows:false.
+7.$("#popularPrev").on("click", function () {
   $(".carousel").slick("slickPrev"); // Перемикання на попередній слайд
 });
 
